@@ -360,44 +360,43 @@ public class StarbucksEmpDAO {
 		}//finally
 		return items;
 	}
-	
-//	public StarbucksLoginDTO searchPassword1 (String userid, String phone, String sex) {
-//		StarbucksLoginDTO dto =new StarbucksLoginDTO();
-//		Connection conn=null;
-//		PreparedStatement pstmt=null;
-//		ResultSet rs=null;
-//		try {
-//			conn=dbConn();
-//			String sql="select password from starbuckslogin where userid=? and phone=? and sex=? ";
-//			pstmt=conn.prepareStatement(sql);
-//			pstmt.setString(1, userid);
-//			pstmt.setString(2, phone);
-//			pstmt.setString(3, sex);
-//			rs=pstmt.executeQuery();
-//			if(rs.next()) {
-//				userid=rs.getString("userid");
-//				phone=rs.getString("phone");
-//				sex=rs.getString("sex");
-//				String password=rs.getString("password");
-//				 dto=new StarbucksLoginDTO(userid, password, phone, sex);
-//						 }
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			try {
-//				if(rs!=null) rs.close();
-//			} catch (Exception e2) {
-//				e2.printStackTrace();
-//			} try {
-//				if(pstmt!=null) pstmt.close();
-//			} catch (Exception e2) {
-//				e2.printStackTrace();
-//			} try {
-//				if(conn!=null) conn.close();
-//			} catch (Exception e2) {
-//				e2.printStackTrace();
-//			}
-//		}//finally
-//		return dto; //백터 리턴
-//	}//end
+	public StarbucksLoginDTO searchPassword1 (String userid, String phone, String sex) {
+		StarbucksLoginDTO dto =new StarbucksLoginDTO();
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			conn=dbConn();
+			String sql="select password from starbuckslogin where userid=? and phone=? and sex=? ";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			pstmt.setString(2, phone);
+			pstmt.setString(3, sex);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				userid=rs.getString("userid");
+				phone=rs.getString("phone");
+				sex=rs.getString("sex");
+				String password=rs.getString("password");
+				 dto=new StarbucksLoginDTO(userid, password, phone, sex);
+						 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			} try {
+				if(pstmt!=null) pstmt.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			} try {
+				if(conn!=null) conn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}//finally
+		return dto; //백터 리턴
+	}//end
 }

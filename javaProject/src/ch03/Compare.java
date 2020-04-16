@@ -1,0 +1,19 @@
+package ch03;
+
+public class Compare {
+
+	public static void main(String[] args) {
+		int a =65 ;
+		char c= 'A';
+		
+	
+		System.out.println(a ==c); //비교연산자 (같냥~)
+		System.out.println(a=c); //대입연산자
+		
+		System.out.println('A' != 65);//비교연산자 <not equal>(같지 않냥~)
+		
+
+
+	}
+
+}
